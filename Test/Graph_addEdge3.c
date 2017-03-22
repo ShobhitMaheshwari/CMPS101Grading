@@ -31,5 +31,15 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
+		addEdge(a, 3, 2);//nothing should happem
+		/**
+		1:
+		2: 3
+		3: 2
+		4:
+		 */
+		printGraph(stdout, a);
+
+
         freeGraph(&a);
 }

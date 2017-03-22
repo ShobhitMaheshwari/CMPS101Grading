@@ -5,6 +5,9 @@ Graph_addEdge4
 Graph_addEdge5
 Graph_BFS
 Graph_BFS2
+Graph_BFS3
+Graph_BFS4
+Graph_BFS5
 Graph_Client
 Graph_Constructor
 Graph_FindPath1
