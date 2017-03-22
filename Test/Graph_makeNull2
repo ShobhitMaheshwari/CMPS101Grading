@@ -1,0 +1,8 @@
+https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_makeNull2.c
+4 0
+Check if graph is constructed and destructed properly
+gcc -std=c99 -Wall -c Graph_makeNull2.c > w 2>&1
+gcc -std=c99 -Wall -c main.c > w  2>&1
+gcc -std=c99 -Wall -o Graph_makeNull2 main.o Graph_makeNull2.o ../List.o ../Graph.o -pthread -lrt &> r
+./Graph_makeNull2 > Graph_makeNull2.out
+valgrind --leak-check=full --log-file="memoryLeak" ./Graph_makeNull2

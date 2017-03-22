@@ -1,0 +1,8 @@
+https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Size.c
+4 0
+Check if graph is constructed and destructed properly
+gcc -std=c99 -Wall -c Graph_Size.c > w 2>&1
+gcc -std=c99 -Wall -c main.c > w  2>&1
+gcc -std=c99 -Wall -o Graph_Size main.o Graph_Size.o ../List.o ../Graph.o -pthread -lrt &> r
+./Graph_Size > Graph_Size.out
+valgrind --leak-check=full --log-file="memoryLeak" ./Graph_Size

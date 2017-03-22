@@ -1,0 +1,5 @@
+https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_FindPath2.expected
+4 0
+Check if graph is constructed and destructed properly
+../FindPath Graph_FindPath2.input Graph_FindPath2.out
+valgrind --leak-check=full --log-file="memoryLeak" ../FindPath Graph_FindPath2.input Graph_FindPath2.out

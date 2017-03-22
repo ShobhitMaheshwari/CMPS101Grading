@@ -1,0 +1,8 @@
+https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_addEdge.c
+4 0
+Check if graph is constructed and destructed properly
+gcc -std=c99 -Wall -c Graph_addEdge.c > w 2>&1
+gcc -std=c99 -Wall -c main.c > w  2>&1
+gcc -std=c99 -Wall -o Graph_addEdge main.o Graph_addEdge.o ../List.o ../Graph.o -pthread -lrt &> r
+./Graph_addEdge >  Graph_addEdge.out
+valgrind --leak-check=full --log-file="memoryLeak" ./Graph_addEdge
