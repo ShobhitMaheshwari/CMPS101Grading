@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_FindPath6.expected
-4 0
-Check if graph is constructed and destructed properly
+5 0
+these are same as given in examples
 timeout 2 ../FindPath Graph_FindPath6.input Graph_FindPath6.out
 valgrind --leak-check=full --log-file="memoryLeak" ../FindPath Graph_FindPath6.input Graph_FindPath6.out

@@ -1,6 +1,6 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Contructor.c
-4 0
-Check if graph is constructed and destructed properly
+2 1
+create graph and destroy it
 gcc -std=c99 -Wall -c Graph_Constructor.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1
 gcc -std=c99 -Wall -o Graph_Constructor main.o Graph_Constructor.o ../List.o ../Graph.o -pthread -lrt &> r

@@ -1,6 +1,6 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Order.c
-4 0
-Check if graph is constructed and destructed properly
+3 0
+just check graph order
 gcc -std=c99 -Wall -c Graph_Order.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1
 gcc -std=c99 -Wall -o Graph_Order main.o Graph_Order.o ../List.o ../Graph.o -pthread -lrt &> r

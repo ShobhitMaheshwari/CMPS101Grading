@@ -1,6 +1,6 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_addEdge2.c
-4 0
-Check if graph is constructed and destructed properly
+5 0
+Creating graph for BFS operations
 gcc -std=c99 -Wall -c Graph_addEdge2.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1
 gcc -std=c99 -Wall -o Graph_addEdge2 main.o Graph_addEdge2.o ../List.o ../Graph.o -pthread -lrt &> r

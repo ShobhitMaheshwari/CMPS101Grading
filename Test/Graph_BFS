@@ -1,6 +1,6 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_BFS.c
-4 0
-Check if graph is constructed and destructed properly
+5 0
+Basic BFS (check parent and distances, source)
 gcc -std=c99 -Wall -c Graph_BFS.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1
 gcc -std=c99 -Wall -o Graph_BFS main.o Graph_BFS.o ../List.o ../Graph.o -pthread -lrt &> r
