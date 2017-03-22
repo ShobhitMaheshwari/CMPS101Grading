@@ -8,13 +8,13 @@ void main1(){
 		printf("%d\n", getSize(a)); // 0
 
 		addEdge(a, 1, 2);
-		printf("%d\n", getSize(a)); // 2
+		printf("%d\n", getSize(a)); // 1
 
 		addArc(a, 1, 2);
-		printf("%d\n", getSize(a)); // 2
+		printf("%d\n", getSize(a)); // 1
 
 		addArc(a, 2, 3);
-		printf("%d\n", getSize(a)); // 3
+		printf("%d\n", getSize(a)); // 2
 
 
 

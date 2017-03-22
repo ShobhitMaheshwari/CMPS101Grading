@@ -10,7 +10,7 @@ void main1(){
 
 		addEdge(a, 2, 3);
 		printf("%d \n", getOrder(a));//4
-		printf("%d \n", getSize(a));//2
+		printf("%d \n", getSize(a));//1
 
 		makeNull(a);
 		printf("%d \n", getOrder(a));//4
