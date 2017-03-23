@@ -36,6 +36,12 @@ void main1(){
 		getPath(l, a, 8);
 		printList(stdout, l);// 2 6 7 8
 
+		clear(l);
+		getPath(l, a, 5);
+		printf("%d\n", length(l));// 1
+		printf("%d\n", front(l) == NIL);//1
+
+
 		freeList(&l);
         freeGraph(&a);
 }

@@ -23,9 +23,6 @@ void main1(){
 		List l = newList();
 		printList(stdout, l);//
 		printf("%d\n", length(l));//0
-		getPath(l, a, 1);
-		moveFront(l);
-		printf("%d\n", get(l) == NIL);//1
 
 		BFS(a, 2);
 		clear(l);
