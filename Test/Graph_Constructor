@@ -1,4 +1,4 @@
-https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Contructor.c
+https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Constructor.c
 2 1
 create graph and destroy it
 gcc -std=c99 -Wall -c Graph_Constructor.c > w 2>&1
