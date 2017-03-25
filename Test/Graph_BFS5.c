@@ -10,16 +10,24 @@ void main1(){
 	//and no edge between x and u
         Graph a = newGraph(8);
 
-		addEdge(a, 1, 2);//r-s
-		addEdge(a, 1, 5);//r-v
-		addEdge(a, 2, 6);//s-w
-		addEdge(a, 6, 3);//w-t
-		addEdge(a, 6, 7);//w-x
-		addEdge(a, 3, 7);//t-x
+		addArc(a, 1, 2);//r-s
+		addArc(a, 2, 1);//r-s
+		addArc(a, 5, 1);//r-v
+		addArc(a, 1, 5);//r-v
+		addArc(a, 6, 2);//s-w
+		addArc(a, 2, 6);//s-w
+		addArc(a, 6, 3);//w-t
+		addArc(a, 3, 6);//w-t
+		addArc(a, 6, 7);//w-x
+		addArc(a, 7, 6);//w-x
+		addArc(a, 3, 7);//t-x
+		addArc(a, 7, 3);//t-x
 		addArc(a, 4, 3);//u-t //Note the difference
 		//addEdge(a, 4, 7);//u-x
-		addEdge(a, 4, 8);//u-y
-		addEdge(a, 7, 8);//x-y
+		addArc(a, 4, 8);//u-y
+		addArc(a, 8, 4);//u-y
+		addArc(a, 7, 8);//x-y
+		addArc(a, 8, 7);//x-y
 
 		BFS(a, 2);
 		printf("%d\n", getSource(a));//2
@@ -40,7 +48,8 @@ void main1(){
 
 
 		//add edge u-x
-		addEdge(a, 4, 7);
+		addArc(a, 4, 7);
+		addArc(a, 7, 4);
 		BFS(a,2);//again run BFS
 
 		printf("%d\n", getSource(a));//2

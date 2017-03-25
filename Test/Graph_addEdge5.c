@@ -24,14 +24,6 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
-		addEdge(a, 2, 2);//shouldn't do anything
-		/**
-		1: 2
-		2: 1 3 4
-		3: 2
-		4: 2
-		 */
-		printGraph(stdout, a);
 		printf("%d\n", getSize(a));//3
 
 		makeNull(a);

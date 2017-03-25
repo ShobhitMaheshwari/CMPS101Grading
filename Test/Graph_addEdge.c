@@ -13,7 +13,8 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
-		addEdge(a, 2, 3);
+		addArc(a, 2, 3);
+		addArc(a, 3, 2);
 		/**
 		1:
 		2: 3
@@ -21,8 +22,6 @@ void main1(){
 		4:
 		 */
 		printGraph(stdout, a);
-
-
 
 		addArc(a, 2, 4);
 		/**
@@ -33,7 +32,8 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
-		addEdge(a, 2, 4);
+		addArc(a, 2, 4);
+		addArc(a, 4, 2);
 		/**
 		1:
 		2: 3 4
@@ -42,7 +42,8 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
-	 	addEdge(a, 2, 1);//alphabetic order is maintained
+	 	addArc(a, 2, 1);//alphabetic order is maintained
+		addArc(a, 1, 2);
 		/**
 		1: 2
 		2: 1 3 4

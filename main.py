@@ -12,7 +12,7 @@ def main():
 	students = getStudents(sys.argv[1:][0])
 
 	with open('gradereport', 'a') as f1:
-		f1.write('Student ID, pa2 [100]\n')
+		f1.write('Student ID, pa4 [100]\n')
 		for student in students:
 			print(student.name)
 			student.grade()

@@ -1,8 +1,0 @@
-https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_addEdge3.c
-3 0
-checking corner cases
-gcc -std=c99 -Wall -c Graph_addEdge3.c > w 2>&1
-gcc -std=c99 -Wall -c main.c > w  2>&1
-gcc -std=c99 -Wall -o Graph_addEdge3 main.o Graph_addEdge3.o ../List.o ../Graph.o -pthread -lrt &> r
-./Graph_addEdge3 >  Graph_addEdge3.out
-valgrind --leak-check=full --log-file="memoryLeak" ./Graph_addEdge3

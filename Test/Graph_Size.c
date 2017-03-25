@@ -7,8 +7,8 @@ void main1(){
         Graph a = newGraph(4);
 		printf("%d\n", getSize(a)); // 0
 
-		addEdge(a, 1, 2);
-		printf("%d\n", getSize(a)); // 1
+		//addEdge(a, 1, 2);
+		//printf("%d\n", getSize(a)); // 1
 
 		addArc(a, 1, 2);
 		printf("%d\n", getSize(a)); // 1
