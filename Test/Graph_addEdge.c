@@ -32,7 +32,6 @@ void main1(){
 		 */
 		printGraph(stdout, a);
 
-		addArc(a, 2, 4);
 		addArc(a, 4, 2);
 		/**
 		1:
@@ -51,7 +50,6 @@ void main1(){
 		4: 2
 		 */
 		printGraph(stdout, a);
-
 
 		makeNull(a);
 		/*

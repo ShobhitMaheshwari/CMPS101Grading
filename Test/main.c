@@ -30,6 +30,7 @@ void *expensive_call(void *data)
         /* ... calculations and expensive io here, for example:
          * infinitely loop
          */
+		setbuf(stdout, NULL);
 main1();
         /* wake up the caller if we've completed in time */
         pthread_cond_signal(&done);
