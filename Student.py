@@ -2,6 +2,8 @@ import shutil, errno, subprocess, os
 from Test import Test
 from timeout import TimeoutError
 from pathlib import Path
+from os import listdir
+from os.path import isfile, join
 
 class Student:
 	def __init__ (self, name, path):
@@ -31,12 +33,12 @@ class Student:
 			# you may also want to remove whitespace characters like `\n` at the end of each line
 			self.tests = [Test(x.strip(), os.path.join(dst, "Test")) for x in content]
 
-	def check_all_files:
+	def check_all_files(self):
 		mypath = os.path.join(os.getcwd(), 'temp')
 		onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-		if(set(['List.c','Graph.c','FindPath.c'] < onlyfiles):
+		if(set(['List.c','Graph.c','FindPath.c']) < set(onlyfiles)):
 			return 1
-		if(set(['List.c','Graph.c'] < onlyfiles):
+		if(set(['List.c','Graph.c']) < set(onlyfiles)):
 			return 2
 		return 0
 
@@ -71,6 +73,7 @@ class Student:
 	def grade(self):
 		self.prepare()
 		status = self.check_all_files()
+		print(status)
 		self.points += 50
 		if(status == 1):
 			self.score += 10
@@ -78,7 +81,7 @@ class Student:
 		if(status == 2):
 			self.score += 15
 			self.report += "15/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
-		
+
 		if(status == 0):
 			self.report += "0/15 No relevant (Graph.c, List.c, FindPath.c) files submitted\n"
 
@@ -103,48 +106,44 @@ class Student:
 		for test in self.tests:
 			self.points+=test.points
 
-		if(compiled):
-			#run all tests
-			for test in self.tests:
-				try:
-					test.runTest()
-				except TimeoutError as error:
-					test.report+="timeout\n"
+		#run all tests
+		for test in self.tests:
+			try:
+				test.runTest()
+			except TimeoutError as error:
+				test.report+="timeout\n"
 
-				self.score+=test.score
-				#print("name: "+str(test.name))
-				#print("score: " +str(test.score))
-				#print("report: " + test.report)
-			pass
-		self.generateReport(compiled)
-		self.remove()
+			self.score+=test.score
+			#print("name: "+str(test.name))
+			#print("score: " +str(test.score))
+			#print("report: " + test.report)
 
-	def generateReport(self, compiled):
+		self.generateReport()
+		#self.remove()
+
+	def generateReport(self):
 		self.report += ("Total score: " + str(self.score) + "/" + str(self.points) + "\n")
-		if(not compiled):
-			self.report += "Could not compile code\n"
-		else:
-			self.report += ("\n-------------\n")
-			for test in self.tests:
-				self.report += ("name: " + str(test.name) + "\n")
-				self.report += ("description: " + str(test.description) + "\n")
-				self.report += ("url: " + str(test.url) + "\n")
-				self.report += ("score: " + str(test.score) +"/" +str(test.points) + "\n")
-				self.report += ("report: " +test.report + "\n")
-				self.report += ("test output:\n")
-				p = os.path.join(os.path.join(os.getcwd(), 'temp'), "Test")
-				my_file = Path((p + "/" + "%s.out")%(test.name))
-				if my_file.is_file():
-					with open((p + "/" + "%s.out")%(test.name), 'r') as content_file:
-						s = 0
-						while True:
-							c= content_file.read(1)
-							s+=1
-							if not c:
-								break
-							if s > 1000:
-								break
-							self.report+=c
+		self.report += ("\n-------------\n")
+		for test in self.tests:
+			self.report += ("name: " + str(test.name) + "\n")
+			self.report += ("description: " + str(test.description) + "\n")
+			self.report += ("url: " + str(test.url) + "\n")
+			self.report += ("score: " + str(test.score) +"/" +str(test.points) + "\n")
+			self.report += ("report: " +test.report + "\n")
+			self.report += ("test output:\n")
+			p = os.path.join(os.path.join(os.getcwd(), 'temp'), "Test")
+			my_file = Path((p + "/" + "%s.out")%(test.name))
+			if my_file.is_file():
+				with open((p + "/" + "%s.out")%(test.name), 'r') as content_file:
+					s = 0
+					while True:
+						c= content_file.read(1)
+						s+=1
+						if not c:
+							break
+						if s > 1000:
+							break
+						self.report+=c
 
-	 			self.report += ("\n-------------\n")
+			self.report += ("\n-------------\n")
 
