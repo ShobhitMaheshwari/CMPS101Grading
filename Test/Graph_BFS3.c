@@ -40,5 +40,6 @@ void main1(){
 		printf("%d\n", getDist(a, 4));//3
 		printf("%d\n", getDist(a, 8));//3
 
+		printf("%d\n", INF == NIL);//0
         freeGraph(&a);
 }

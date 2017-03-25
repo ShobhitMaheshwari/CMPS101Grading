@@ -19,10 +19,9 @@ void main1(){
 		addEdge(a, 4, 8);//u-y
 		addEdge(a, 7, 8);//x-y
 
-		printf("%d\n", INF == NIL);//0
 		printf("%d\n", getSource(a) == NIL);//1
-		printf("%d\n", getParent(a, 1) == NIL);//1
-		printf("%d\n", getParent(a, 2) == NIL);//1
+		int parent = getParent(a, 1);
+		printf("%d\n", getParent(a, 2) == parent);//1
 
 
 		BFS(a, 2);
