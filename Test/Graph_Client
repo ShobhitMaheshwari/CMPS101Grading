@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Client.c
-9 1
+14 2
 Graph Client as given in examples
 gcc -std=c99 -Wall -c Graph_Client.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1

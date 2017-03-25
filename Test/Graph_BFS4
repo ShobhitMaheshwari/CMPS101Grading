@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_BFS4.c
-4 1
+2 0
 BFS (graph modified a little - check path)
 gcc -std=c99 -Wall -c Graph_BFS4.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1

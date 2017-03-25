@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_BFS2.c
-5 0
+2 0
 Basic BFS (check path)
 gcc -std=c99 -Wall -c Graph_BFS2.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1

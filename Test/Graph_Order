@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_Order.c
-3 0
+1 0
 just check graph order
 gcc -std=c99 -Wall -c Graph_Order.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1

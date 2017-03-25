@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_addEdge.c
-5 0
+1 0
 Basic operations
 gcc -std=c99 -Wall -c Graph_addEdge.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1

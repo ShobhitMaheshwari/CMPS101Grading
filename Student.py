@@ -31,20 +31,74 @@ class Student:
 			# you may also want to remove whitespace characters like `\n` at the end of each line
 			self.tests = [Test(x.strip(), os.path.join(dst, "Test")) for x in content]
 
+	def check_all_files:
+		mypath = os.path.join(os.getcwd(), 'temp')
+		onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+		if(set(['List.c','Graph.c','FindPath.c'] < onlyfiles):
+			return 1
+		if(set(['List.c','Graph.c'] < onlyfiles):
+			return 2
+		return 0
+
+
 	def remove(self):
 		#delete temp folder
 		shutil.rmtree(os.path.join(os.getcwd(), 'temp'))
 
-	def compile(self):
+	def compile_graph(self):
 		try :
-			testResults = subprocess.check_output("make", cwd=os.path.join(os.getcwd(), 'temp'), shell=True)
+			testResults = subprocess.check_output("gcc -std=c99 -c Graph.c", cwd=os.path.join(os.getcwd(), 'temp'), shell=True)
 			return True
 		except subprocess.CalledProcessError as error :
 			return False
 
+	def compile_list(self):
+		try :
+			testResults = subprocess.check_output("gcc -std=c99 -c List.c", cwd=os.path.join(os.getcwd(), 'temp'), shell=True)
+			return True
+		except subprocess.CalledProcessError as error :
+			return False
+
+	def compile_findpath(self):
+		try :
+			testResults = subprocess.check_output("gcc -std=c99 -c FindPath.c", cwd=os.path.join(os.getcwd(), 'temp'), shell=True)
+			testResults = subprocess.check_output("gcc -std=c99 -o FindPath FindPath.o Graph.o List.o", cwd=os.path.join(os.getcwd(), 'temp'), shell=True)
+			return True
+		except subprocess.CalledProcessError as error :
+			return False
+
+
 	def grade(self):
 		self.prepare()
-		compiled = self.compile()
+		status = self.check_all_files()
+		self.points += 50
+		if(status == 1):
+			self.score += 10
+			self.report += "10/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
+		if(status == 2):
+			self.score += 15
+			self.report += "15/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
+		
+		if(status == 0):
+			self.report += "0/15 No relevant (Graph.c, List.c, FindPath.c) files submitted\n"
+
+		if(self.compile_list()):
+			self.score += 8
+			self.report += "8/8 points for compiling List.c\n"
+		else:
+			self.report += "0/8  List.c compilation failed\n"
+
+		if(self.compile_graph()):
+			self.score += 17
+			self.report += "17/17 points for compiling Graph.c\n"
+		else:
+			self.report += "0/17 Graph.c not compile\n"
+
+		if(self.compile_findpath()):
+			self.score += 10
+			self.report += "10/10 points for compiling FindPath.c\n"
+		else:
+			self.report += "0/10 points for compiling FindPath.c\n"
 
 		for test in self.tests:
 			self.points+=test.points

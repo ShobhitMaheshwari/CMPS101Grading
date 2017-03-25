@@ -23,7 +23,6 @@ class Test :
 				testResults = subprocess.check_output(command, shell=True, cwd=self.path)
 			except subprocess.CalledProcessError as error :
 				self.report +="Test Failure for command "  + command + "\n"
-				return
 			#Perform diff comparison of expected output and actual output
 		try:
 			#raise ValueError('A very specific bad thing happened')
@@ -40,7 +39,8 @@ class Test :
 				#self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
 				self.score += self.a
 			except:
-				self.report +=("Test failed due to comparison failure.") + "\n"
+				if("Test Failure for command" not in self.report):
+					self.report +=("Test failed due to comparison failure.") + "\n"
 				return
 
 		#valgrind --leak-check=full ./Test_Constructor >> Test_Constructor.out

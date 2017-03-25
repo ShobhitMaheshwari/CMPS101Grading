@@ -7,13 +7,8 @@ Graph_BFS3
 Graph_BFS4
 Graph_BFS5
 Graph_Client
-Graph_Constructor
 Graph_FindPath1
 Graph_FindPath2
-Graph_FindPath3
-Graph_FindPath4
-Graph_FindPath5
-Graph_FindPath6
 Graph_makeNull
 Graph_makeNull2
 Graph_Order

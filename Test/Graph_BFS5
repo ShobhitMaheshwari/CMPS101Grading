@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Graph_BFS5.c
-7 1
+2 0
 BFS (graph modified a little - check parent, distance and path, source)
 gcc -std=c99 -Wall -c Graph_BFS5.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w  2>&1
