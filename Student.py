@@ -118,7 +118,7 @@ class Student:
 			#print("report: " + test.report)
 
 		self.generateReport()
-		#self.remove()
+		self.remove()
 
 	def generateReport(self):
 		self.report += ("Total score: " + str(self.score) + "/" + str(self.points) + "\n")
