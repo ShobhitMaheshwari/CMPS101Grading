@@ -83,7 +83,7 @@ int main()
         struct timespec max_wait;
         memset(&max_wait, 0, sizeof(max_wait));
         /* wait at most 2 seconds */
-        max_wait.tv_sec = 2;
+        max_wait.tv_sec = 1;
         do_or_timeout(&max_wait);
 pthread_cond_destroy(&done);
   pthread_mutex_destroy(&calculating);

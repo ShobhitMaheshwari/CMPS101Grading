@@ -21,6 +21,7 @@ def main():
 			with open(studentreport, 'w') as f:
 				f.write(student.report)
 			f1.write(student.name+","+str(student.score)+"\n")
+			f1.flush()
 
 	#with open('gradereport', 'w') as f:
 		#f.write('Student ID, pa2 [100]\n')

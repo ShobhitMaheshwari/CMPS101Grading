@@ -37,10 +37,10 @@ class Student:
 		mypath = os.path.join(os.getcwd(), 'temp')
 		onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 		if(set(['List.c','Graph.c','FindPath.c']) < set(onlyfiles)):
-			return 1
+			return 0
 		if(set(['List.c','Graph.c']) < set(onlyfiles)):
-			return 2
-		return 0
+			return 1
+		return 2
 
 
 	def remove(self):
@@ -75,14 +75,13 @@ class Student:
 		status = self.check_all_files()
 		print(status)
 		self.points += 50
+		if(status == 0):
+			self.score += 15
+			self.report += "15/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
 		if(status == 1):
 			self.score += 10
 			self.report += "10/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
 		if(status == 2):
-			self.score += 15
-			self.report += "15/15 points for submitting relevant (Graph.c, List.c, FindPath.c) files\n"
-
-		if(status == 0):
 			self.report += "0/15 No relevant (Graph.c, List.c, FindPath.c) files submitted\n"
 
 		if(self.compile_list()):

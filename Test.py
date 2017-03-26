@@ -6,7 +6,7 @@ class Test :
 		self.commands = [command.rstrip() for command in open(os.path.join(path, testname))]
 		self.url = self.commands[0]
 		self.a, self.b = map(lambda x: int(x), self.commands[1].split())
-	 	self.points = self.a + self.b
+		self.points = self.a + self.b
 		self.description = self.commands[2]
 		self.name = testname
 		self.report = ""
